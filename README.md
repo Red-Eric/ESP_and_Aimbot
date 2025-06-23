@@ -8,7 +8,7 @@ This project is an **internal C++ cheat for cod4**:
 # Demo
 https://github.com/user-attachments/assets/e03ebf6b-c418-4c97-8dee-30b1cc59d3e1
 
-### 🔧 FOV Code Example (C++)
+### 🔧 FOV Code 
 
   ```cpp
   static float FOVAimbot = 150.0f;
