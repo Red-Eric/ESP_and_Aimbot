@@ -1,6 +1,5 @@
-﻿  dllmain.cpp
-C:\Users\NULL\source\repos\d\CheatBlur\dllmain.cpp(81,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\NULL\source\repos\d\CheatBlur\dllmain.cpp(81,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  esp.cpp
-  Generating Code...
-  CheatBlur.vcxproj -> C:\Users\NULL\source\repos\d\Debug\CheatBlur.dll
+﻿D:\vs2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (CheatBlur.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  dllmain.cpp
+C:\Users\NULL\source\repos\d\CheatBlur\dllmain.cpp(182,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\NULL\source\repos\d\CheatBlur\dllmain.cpp(182,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  CheatBlur.vcxproj -> C:\Users\NULL\source\repos\d\Debug\AimbotESP.dll

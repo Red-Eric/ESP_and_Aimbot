@@ -3,8 +3,9 @@
 #include <Windows.h>
 #include <vector>
 #include <cmath>
-
+#include <iomanip>
+#include <sstream>
 bool WorldToScreen(const Vector3& pos, Vector2& screen, float matrix[16], int windowWidth, int windowHeight);
-Vector2 GetNearestFromCenter(const std::vector<Vector2>& screenPositions, int screenWidth, int screenHeight);
-void DrawLine(HDC hdc, int x1, int y1, int x2, int y2, COLORREF color);
+bool GetNearestFromCenter(const std::vector<Vector2>& screenPositions, int screenWidth, int screenHeight, float FOV, Vector2& outTarget);
 void MoveMouseToWindowOrigin(HWND hwnd, int x, int y);
+std::string GetDistanceInMetersString(const Vector3& myPos, const Vector3& target);

@@ -1,5 +1,7 @@
 #pragma once
 #include <Windows.h>
+#include <iostream>
+#include <string>
 
 struct Vector3 {
     float x, y, z;
@@ -9,5 +11,15 @@ struct Vector3 {
 
 struct Vector2 {
     float x, y;
+    std::string info;
 };
 
+enum matchType
+{
+    FreeForAll,
+    Domination,
+    SearchAndDestroy,
+    Sabotage,
+    TeamDeathMatch,
+    HeadQuarters,
+};

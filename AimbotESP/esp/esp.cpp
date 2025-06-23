@@ -17,19 +17,9 @@ bool WorldToScreen(const Vector3& pos, Vector2& screen, float matrix[16], int wi
     return true;
 }
 
-
-void DrawLine(HDC hdc, int x1, int y1, int x2, int y2, COLORREF color) {
-    HPEN hPen = CreatePen(PS_SOLID, 2, color);
-    HGDIOBJ oldPen = SelectObject(hdc, hPen);
-    MoveToEx(hdc, x1, y1, NULL);
-    LineTo(hdc, x2, y2);
-    SelectObject(hdc, oldPen);
-    DeleteObject(hPen);
-}
-
-Vector2 GetNearestFromCenter(const std::vector<Vector2>& screenPositions, int screenWidth, int screenHeight) {
-    Vector2 bestTarget = { 0.0f, 0.0f };
-    float bestDistance = 99999.0f;
+bool GetNearestFromCenter(const std::vector<Vector2>& screenPositions, int screenWidth, int screenHeight, float FOV, Vector2& outTarget) {
+    float bestDistance = FOV;
+    bool found = false;
 
     for (const auto& pos : screenPositions) {
         float dx = pos.x - (screenWidth / 2.0f);
@@ -38,11 +28,12 @@ Vector2 GetNearestFromCenter(const std::vector<Vector2>& screenPositions, int sc
 
         if (dist < bestDistance) {
             bestDistance = dist;
-            bestTarget = pos;
+            outTarget = pos;
+            found = true;
         }
     }
 
-    return bestTarget;
+    return found;
 }
 
 void MoveMouseToWindowOrigin(HWND hwnd, int x, int y) {
@@ -50,4 +41,17 @@ void MoveMouseToWindowOrigin(HWND hwnd, int x, int y) {
     if (ClientToScreen(hwnd, &pt)) {
         SetCursorPos(pt.x, pt.y);
     }
+}
+
+std::string GetDistanceInMetersString(const Vector3& myPos, const Vector3& target) {
+    float dx = target.x - myPos.x;
+    float dy = target.y - myPos.y;
+    float dz = target.z - myPos.z;
+
+    float dist = std::sqrt(dx * dx + dy * dy + dz * dz);
+    float meters = dist / 50.0f;
+
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << meters << " m";
+    return oss.str();
 }
