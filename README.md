@@ -6,7 +6,7 @@ This project is an **internal C++ cheat for cod4**:
 - FOV is defined as a circular area centered on screen
 
 # Demo
-https://github.com/user-attachments/assets/915ce47b-7a9e-4b65-90b4-1481b4d09165
+https://github.com/user-attachments/assets/e03ebf6b-c418-4c97-8dee-30b1cc59d3e1
 
 ### 🔧 FOV Code Example (C++)
 
